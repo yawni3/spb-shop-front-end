@@ -1,0 +1,46 @@
+
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+button, .pixel-ui {
+  font-family: var(--font-pixel);
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+a{
+  text-decoration: none;
+}
+.logo {
+  font-family: 'Booble Balmy', cursive;
+  font-size: 28px;
+  margin-bottom: 2rem;
+}
+
+/* CONTENT */
+.content {
+  margin-left: 90px;
+  padding: 3rem;
+}
+
+.layout{
+  display:flex;
+  min-height: 100vh;
+}
+
+.content{
+  flex: 1;
+  margin-left: 110px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  width: 100%;
+}
+

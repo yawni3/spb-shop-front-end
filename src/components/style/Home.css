@@ -1,0 +1,70 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Sections */
+.home-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.item-center{
+  align-items: center;
+}
+
+/* Hero */
+.hero-section {
+  text-align: center;
+  justify-content: center;
+}
+
+/* Carousel */
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+/* Titles animasyon*/
+.section-title .hero-sub{
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpTitle 0.8s ease forwards;
+}
+
+@keyframes fadeUpTitle {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+/* Mobil */
+@media (max-width: 768px) {
+  .feedback-btn {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .feedback-btn img {
+    width: 60px;
+  }
+
+  .feedback-text {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+}

@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swa');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+  --font-pixel: 'Pixelify Sans', cursive;
+  --font-heading: 'Lobster', sans-serif;
+  --font-body: 'Quicksand', sans-serif;
+  --font-two: "Lobster Two", sans-serif;
+  --color-bg: #2a1f1b;
+  --color-brown: #5e3a31;
+  --color-cream: #f4e7e3;
+  --color-pink: #ff71d0;
+  --color-blue:#78AEFF;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-brown);
+  background: var(--color-bg);
+}

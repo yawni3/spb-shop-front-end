@@ -1,0 +1,22 @@
+.about-page{
+    display:flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about-hero{
+    text-align: center;
+}
+
+.about-block{
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.about-ending{
+    text-align: center;
+    font-style: italic;
+    opacity: 0.8;
+}
+ 

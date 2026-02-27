@@ -1,0 +1,34 @@
+.project-carousel{
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 10px 4px 20px;
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    touch-action: pan-x;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 24px;
+}
+
+.project-carousel-carousel::-webkit-scrollbar{
+    display: none;
+}
+
+.project-card{
+    scroll-snap-align: center;
+    flex: 0 0 auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.project-carousel::before, .project-carousel::after{
+    content:"";
+    min-width: 20px;
+}
+
+.project-card{
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
