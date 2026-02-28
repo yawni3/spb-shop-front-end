@@ -1,10 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/home";
-import Projects from "./pages/Projects/projects";
-import ProjectDetail from "./pages/Projects/projectDetail";
-import About from "./pages/About/about";
-import Sources from "./pages/Sources/sources";
-import Layout from "./Baselayout";
+import Home from "./pages/Home/home.jsx";
+import Projects from "./pages/Projects/projects.jsx";
+import ProjectDetail from "./pages/Projects/projectDetail.jsx";
+import About from "./pages/About/About.jsx";
+import Sources from "./pages/Sources/sources.jsx";
+import Layout from "./Baselayout.jsx";
+
 
 function App() {
   return (

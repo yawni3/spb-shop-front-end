@@ -2,12 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link id="dynamic-icon" rel="icon" type="image/png" href="/milkshake-start.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>client</title>
+    <title>Sleepy Pie Bakery 🧁</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script> 
+    const favicon = document.getElementById("dynamic-icon");
+
+      if (favicon) {
+ 
+         favicon.href = "/shake-start.png?v=" + Date.now();
+
+           window.addEventListener("DOMContentLoaded", () => {
+           setTimeout(() => {
+            favicon.href = "/milkshake-middle.png?v=" + Date.now();
+          }, 400);
+        });
+
+          window.addEventListener("load", () => {
+           setTimeout(() => {
+              favicon.href = "/full-milkshake.png?v=" + Date.now();
+            }, 800);
+         });
+      }
+    </script>
   </body>
 </html>
