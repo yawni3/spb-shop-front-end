@@ -4,6 +4,7 @@ import { aboutData } from "../data/about";
 import { getBrowserLang } from "../utils/lang";
 import { globalLang } from "../data/globalLang";
 import { t } from "../utils/lang";
+import "./style/sharedBtn.css";
 
 const AboutPreview = () =>{
 
@@ -16,7 +17,7 @@ const AboutPreview = () =>{
 
             <p className="preview-text">{aboutData.description[lang]}</p>
 
-           <Link to="/about" className="read-more-btn">{t(globalLang.buttons.morebtn)}
+           <Link to="/about" className="read-more-btn pixel-btn">{t(globalLang.buttons.morebtn)}
            </Link> 
         </div>
     );

@@ -1,70 +1,90 @@
 @media (max-width: 768px) {
 
+  /* ── Layout ── */
+
+  .content-card {
+    max-width: 92%;
+    padding: 12px 18px;
+    margin: 0 auto;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    /* width: 80% kaldırıldı — max-width: 92% yeterli */
+  }
+
+  /* Sidebar genişliği kadar boşluk bırak (sidebar.css ile uyumlu) 
+  .content-ctn,
+  .content-card {
+    margin-left: 10px;
+  }
+*/
+
+  /* ── Sayfa içerikleri — yatay padding & hizalama ── */
+
   .project-detail,
   .about-page,
   .page-projects,
-  .about-preview,
-  .project-card {
+  .about-preview {
     padding-left: 18px;
     padding-right: 18px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 
   .content-card :not(.hero-title) {
     text-align: center;
   }
 
+
+  /* ── Carousel & Kartlar ── */
+
+  .project-carousel {
+    padding: 10px 16px 20px;
+    gap: 16px;
+  }
+
+  .project-card {
+    flex: 0 0 220px;
+    width: 220px;
+  }
+
+  .project-cover {
+    height: 220px;
+  }
+
+  .project-detail {
+    padding: 24px 20px 60px;
+  }
+
+
+  /* ── Butonlar — tap efekti (hover yok, active ile) ── */
+
   .project-btn,
-  .feedback-btn {
+  .pixel-btn {
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
 
   .project-btn:active,
-  .feedback-btn:active {
+  .pixel-btn:active {
     transform: scale(0.92);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
-  .feedback-btn{
-    padding: 10px 14px;
-    font-size: 14px;
-  }
 
-  .feedback-btn img{
-    width: 28px;
-  }
-}
-
-@media (max-width: 768px) {
-
+  /* ── Feedback butonu ──
+     Çelişen 3 ayrı tanım temizlendi, tek doğru değer bırakıldı */
   .feedback-btn {
-    padding: 10px 14px;
-    font-size: 14px;
+    right: 16px;
+    bottom: 16px;
+  
   }
 
   .feedback-btn img {
-    width: 28px;
+    width: 60px;   /* önceki kodda 28px ve 60px çelişiyordu — 60px daha uygun */
   }
 
-}
-
-@media (max-width: 768px) {
-
-  .projects-grid{
-    align-items: center;
-    justify-content: center;
-    padding-left: 20px;
-  }
-  .project-cover {
-    margin-top: 3%;
-  }
-}
-
-@media (hover: hover) {
-
-  .project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 0 var(--color-brown);
+  .feedback-text {
+    font-size: 12px;
+    padding: 3px 6px;
   }
 
 }

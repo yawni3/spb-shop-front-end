@@ -6,9 +6,7 @@
   z-index: 100;
   position: sticky;
 }
-
 /* SIDEBAR */
-
 .sidebar {
   position: fixed;
   left: 0;
@@ -17,26 +15,16 @@
   width: 90px;
   display: flex;
   justify-content: center;
- 
+  z-index: 100;
 }
-
-.sidebar nav {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-
 /* SIGN */
 .sign {
   position: relative;
   width: 220px;
   height: 90px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   transition: transform 0.25s ease;
 }
 
@@ -61,10 +49,8 @@
 .inner {
   position: relative;
   z-index: 2;
-
   display: flex;
   align-items: center;
-
   transform: translateX(0);
   transition: transform 0.3s ease;
 }
@@ -78,11 +64,9 @@
 .label {
   opacity: 0;
   transform: translateX(-10px);
-
   font-family: "Pixelify Sans", sans-serif;
   font-size: 18px;
   color: white;
-
   transition: all 0.3s ease;
 }
 
@@ -111,43 +95,41 @@
   }
 
   .sidebar {
-    width: 70px;
-    z-index: 100;
-
+    width: 52px;
+    top: 50%;
+    left: 0;
+  }
+  .sidebar nav {
+    gap: 0.9rem;
   }
 
   .sign {
-    width: 110px;
-    height: 70px;
+    width: 52px;
+    height: 52px;
     transform: none !important;
   }
   .sign:hover{
     transform: none;
   }
   .icon {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
   }
 
   .label{
-    font-size: 12px;
-    margin-left: 34px;
+    display: none;
   }
     .sign.active {
-    transform: translateX(25px) scale(1.10);
-  }
-
-  .sign.active .inner {
-    transform: translateX(5px);
-  }
-
-  .sign.active .label {
-    opacity: 1;
-    transform: translateX(0);
+    transform: scale(1.1) !important;
   }
 
   .sign.active .sign-shape path {
     fill: #5d9cff;
     stroke: white;
+  }
+
+  .content-ctn,
+  .content-card{
+    margin-left: 56px;
   }
 }

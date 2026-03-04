@@ -11,6 +11,8 @@
     touch-action: pan-x;
     scroll-snap-type: x mandatory;
     scroll-padding: 24px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .project-carousel-carousel::-webkit-scrollbar{
@@ -25,7 +27,8 @@
 
 .project-carousel::before, .project-carousel::after{
     content:"";
-    min-width: 20px;
+    min-width: 4px;
+    flex-shrink: 0;
 }
 
 .project-card{

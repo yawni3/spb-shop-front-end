@@ -1,16 +1,79 @@
-# React + Vite
+# 🧁 Sleepy pie bakery 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1️⃣ Project Description
 
-Currently, two official plugins are available:
+**🥐 Sleepy Pie Bakery**: Web-based asset & content platform.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+- Users: visitor / member / buyer
+- Admin: content and asset management
+- Purpose: asset sales + supporting the ecosystem of projects
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 2️⃣ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Layer | Technology |
+| --- | --- |
+| Frontend | React (Netlify deploy) |
+| Backend | Node.js / Express (MongoDB) |
+| Admin Panel | Electron build (Dashboard) |
+| Database | MongoDB |
+| Deployment | Frontend: Netlify / Backend: Own server |
+
+---
+
+## 3️⃣ Architecture
+
+```
+SPB/
+│
+├── frontend/
+│ ├── src/
+│ │ ├── components/ # Reusable React Components
+│ │ ├── pages/ # Page Components
+│ │ ├── assets/ # Static assets (images, icons)
+│ │ ├── hooks/ # Custom React hooks
+│ │ ├── context/ # Global state management
+│ │ ├── utils/ # Helper functions
+│ │ └── App.js
+│   └── package.json
+│
+├── backend/
+│ ├── src/
+│ │ ├── controllers/ # API logic
+│ │ ├── routes/ # API routes
+│ │ ├── models/ # MongoDB schemas
+│ │ ├── middleware/ # Auth / validation
+│ │ └── server.js # Entry point
+│ └── package.json
+│
+├── admin-dashboard/
+│ ├── src/
+│ │   ├── components/
+│ │ ├── pages/
+│ │ └── main.js # Electron main process
+│ └── package.json
+│
+├── docs/
+│ └── README.md
+└── .gitignore
+```
+
+---
+
+## 4️⃣ Workflow
+
+1. Frontend and Backend separation → Sending and receiving data via REST API
+2. Admin Dashboard → Will be built via Electron, connecting to the backend API
+3. MongoDB → User, asset, and sales data
+4. Deployment → Frontend Netlify, Backend's own server
+5. Asset pack → Will be published via SPB, seasonal logic will be applied
+
+---
+
+## 5️⃣ Upcoming Improvements
+
+- User authentication can be integrated with Firebase
+- Premium content / payment system (Stripe / Gumroad API)
+- Analytics (user engagement, asset sales)

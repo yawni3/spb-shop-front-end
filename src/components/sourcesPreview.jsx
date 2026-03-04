@@ -4,6 +4,7 @@ import { sourcesData } from "../data/sources";
 import { getBrowserLang } from "../utils/lang";
 import { globalLang } from "../data/globalLang";
 import { t } from "../utils/lang";
+import "./style/sharedBtn.css";
 
 const SourcesPreview = () => {
 
@@ -34,7 +35,7 @@ const SourcesPreview = () => {
         ))}
       </div>
 
-      <Link to="/sources" className="view-all-btn">
+      <Link to="/sources" className="view-all-btn pixel-btn">
         {t(globalLang.buttons.btnviewtext)}
       </Link>
 

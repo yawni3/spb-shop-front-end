@@ -15,7 +15,7 @@ export const projects = [
 
             Tiramisu adlı haylaz, cupcake sevdalısı bir kediyi kontrol ederek  küçük engeller ve sevimli zorluklar arasında ilerlersin.
 
-            Bu oyun, öğrenme sürecimin bir parçası olarak geliştirdiğim ilk oyunumdur ve tamamen sevgiyle yapılmıştır.
+            Bu oyun, öğrenme sürecimin bir parçası olarak geliştirmekte olduğum ilk oyunumdur tamamen sevgi ve sinir krizleri ile yapılmıştır.
             `, 
             en: `
             Cat on Galata Rooftops is a cozy indie platformer about Tiramisu — a cupcake-loving, mischievous cat living in Galata.
