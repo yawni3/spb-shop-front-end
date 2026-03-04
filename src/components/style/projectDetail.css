@@ -29,8 +29,8 @@
 /* Stage badge — cover üzerine konumlanan durum etiketi */
 .stage {
   position: absolute;
-  top: 14px;
-  left: -8px;
+  top: 50px;
+  left: 20px;
   padding: 6px 14px;
   font-size: 13px;
   font-family: var(--font-pixel);
