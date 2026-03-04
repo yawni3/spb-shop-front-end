@@ -31,6 +31,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;    
+  z-index: 40;
 }
 
 .project-cover img {
@@ -46,6 +47,7 @@
   align-items: center;
   gap: 10px;
   opacity: 0.8;
+  height: 260px;
 }
 
 

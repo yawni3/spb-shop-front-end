@@ -10,6 +10,7 @@ import "../../components/style/projectDetail.css";
 import "../../components/style/feedback.css";
 import { globalLang } from "../../data/globalLang";
 import { t } from "../../utils/lang";
+import './../../components/style/sharedBtn.css'
 
 const ProjectDetail = () => {
 
@@ -78,7 +79,7 @@ const ProjectDetail = () => {
 
 
       {link && (
-        <a className="project-btn" href={link} target="_blank" rel="noreferrer">
+        <a className="project-btn pixel-btn" href={link} target="_blank" rel="noreferrer">
          {t(globalLang.buttons.viewprojectbtn)}
         </a>
       )}
