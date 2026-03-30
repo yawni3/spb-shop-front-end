@@ -7,9 +7,26 @@ export const globalLang = {
       projects:{
         tr:"Projeler",
         en:"All Projects"
+      },
+      shop: {
+            tr:"Mağaza",
+            en:"Shop"
       }
-},
+      },
 
+      subtitle: {
+            shop: {
+                  en:"Sleepy Pie Bakery asset store",
+                  tr: "Sleepy Pie Bakery asset Mağazası"
+             }
+      },
+
+      placeholders:{
+            shop: {
+                  en:"Coming soon 🥨",
+                  tr: "Yakında 🍫"
+            }
+      },
       buttons:{
             morebtn:{
                   tr:"Daha fazlası için tıkla 🍩",

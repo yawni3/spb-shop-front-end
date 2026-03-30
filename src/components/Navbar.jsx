@@ -5,6 +5,7 @@ import HomeIcon from "../assets/home.png";
 import ProjectIcon from "../assets/cupcake.png";
 import SourcesIcon from "../assets/croissant.png";
 import AboutIcon from "../assets/donat.png";
+import ShopIcon from "../assets/shop.png";
 
 const Navbar = () => {
 
@@ -18,7 +19,8 @@ const Navbar = () => {
     { to: "/", label: "Home", icon: HomeIcon },
     { to: "/projects", label: "Projects", icon: ProjectIcon },
     { to: "/sources", label: "Sources", icon: SourcesIcon },
-    { to: "/about", label: "About", icon: AboutIcon }
+    { to: "/about", label: "About", icon: AboutIcon },
+    { to: "/shop", label: "shop", icon: ShopIcon }
   ];
 
 

@@ -12,5 +12,6 @@ export const stageMap = {
   baking: {
     label: "Baking 🍪",
     className: "Baking"
-  }
+  },
+
 };
