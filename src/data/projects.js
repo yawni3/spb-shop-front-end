@@ -47,11 +47,18 @@ export const projects = [
              tr: "Sevimli kaos ve özgün dövüş stilleriyle dolu canlı bir dünya."
           },
         description: {
-            en: "Lunaspis is an upcoming fighting game that blends diverse cultures with a touch of cute chaos. We are currently in the pre-production phase, focused on unique fighting styles. \n\nCreated in collaboration with my BFF and Character Designer Nehir 🌟 Stay tuned!",
-            tr: "Lunaspis; farklı kültürleri sevimli bir kaosla harmanlayan, geliştirme aşamasında olan bir dövüş oyunudur. Şu an hazırlık sürecindeyiz; benzersiz dövüş stilleri üzerinde çalışıyoruz. \n\nEn yakın arkadaşım ve karakter tasarımcımız Nehir 🌟ile birlikte hayata geçirdiğimiz bu maceranın güncellemeleri için takipte kalın <3"
+            en: "Lunaspis is an upcoming fighting game that blends diverse cultures with a touch of cute chaos. We are currently in the pre-production phase, focused on unique fighting styles. \n\nCreated in collaboration with my BFF and Character Designer Asteria Stay tuned!",
+            tr: "Lunaspis; farklı kültürleri sevimli bir kaosla harmanlayan, geliştirme aşamasında olan bir dövüş oyunudur. Şu an hazırlık sürecindeyiz; benzersiz dövüş stilleri üzerinde çalışıyoruz. \n\nEn yakın arkadaşım ve karakter tasarımcımız Asteria ile birlikte hayata geçirdiğimiz bu maceranın güncellemeleri için takipte kalın <3"
         },
         cover: "",
         stage: "baking",
-        link: "" // Eğer ileride bir link olursa buraya eklersin
+        link: "",
+        externalButtons: [ 
+            {
+                label: { en: "Designer's Profile ⭐", tr:"Tasarımcının Profili ⭐"},
+                url: "https://www.instagram.com/nehryx/",
+                type:"designer"
+            }
+        ]
     }
 ];

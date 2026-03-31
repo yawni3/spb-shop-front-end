@@ -2,7 +2,7 @@ import { globalLang } from "../../data/globalLang";
 import { t } from "../../utils/lang";
 import '../../components/style/Home.css';
 import '../../components/style/Shop.css';
-import yawncook from "../../assets/img/yawncook.png";
+import yawncook from "../../assets/img/yawniecook.png";
 
 const Shop = () =>{
     //gumroad const [products, setProducts] = useState([]);

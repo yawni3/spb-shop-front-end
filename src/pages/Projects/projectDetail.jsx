@@ -22,7 +22,7 @@ const ProjectDetail = () => {
 
   if (!project) return <p>Project not found</p>;
 
-  const { title, description, cover, stage, tags, link } = project;
+  const { title, description, cover, stage, tags, link, externalButtons } = project;
 
   const stageData = stageMap[stage?.toLowerCase()];
 
@@ -55,7 +55,6 @@ const ProjectDetail = () => {
         ) : (
           <div className="cover-placeholder">
             <img src={dino} alt="no cover" />
-            <span>Cover not found yet</span>
           </div>
         )}
 
@@ -77,16 +76,18 @@ const ProjectDetail = () => {
         ))}
       </div>
 
-
+      <div className="project-actions">
       {link && (
         <a className="project-btn pixel-btn" href={link} target="_blank" rel="noreferrer">
          {t(globalLang.buttons.viewprojectbtn)}
         </a>
       )}
 
-
-    
-
+      {/* DİNAMİK BUTONLAR: Burada diğer tüm butonları renderlıyoruz */}
+      {externalButtons?.map((btn, index) =>(
+        <a key={index} className={`project-btn pixel-btn secondary-btn ${btn.type}`} href={btn.url} target="_blank" rel="noreferrer">{t(btn.label)} </a>
+      ))}
+    </div>
       <button className="feedback-btn" onClick={handleClick}>
         <img src={feedbackImg} alt="feedback" />
         <span className="feedback-text">{btnText}</span>
