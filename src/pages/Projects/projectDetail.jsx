@@ -83,6 +83,8 @@ const ProjectDetail = () => {
         </a>
       )}
 
+
+
       {/* DİNAMİK BUTONLAR: Burada diğer tüm butonları renderlıyoruz */}
       {externalButtons?.map((btn, index) =>(
         <a key={index} className={`project-btn pixel-btn secondary-btn ${btn.type}`} href={btn.url} target="_blank" rel="noreferrer">{t(btn.label)} </a>
