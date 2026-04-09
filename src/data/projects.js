@@ -60,5 +60,40 @@ export const projects = [
                 type:"designer"
             }
         ]
-    }
+    },
+    {
+    id: "my-corner",
+    title: {
+        tr: "My Corner (Yawnie)",
+        en: "My Corner (Yawnie)"
+    },
+    shortDesc: {
+        tr: "Masaüstünde ve cebinde yaşayan minik bir tilki arkadaş! 🦊",
+        en: "A tiny fox friend living on your desktop and in your pocket! 🦊"
+    },
+    description: {
+        tr: "Yawnie, ekranının bir köşesinde sana eşlik eden tatlı bir tilki! ✨ \n\n⚠️ ÖNEMLİ: Uygulama henüz 'imzalanmadığı' için Windows kurulumda uyarı verebilir; 'Ek Bilgi' -> 'Yine de Çalıştır' diyerek Yawnie'yi uyandırabilirsin. Hiçbir verini toplamaz, sadece seninle vakit geçirmek ister. \n\n📱 MOBİL NOT: Yawnie mobilde biraz utandığı için yerini kendi seçiyor (rastgele yerleşiyor), v1 olduğu için ona biraz zaman tanı! 🍓", 
+        en: "Yawnie is a sweet fox who accompanies you in a corner of your screen! ✨ \n\n⚠️ IMPORTANT: Since the app is not yet 'signed', Windows may show a warning; click 'More Info' -> 'Run Anyway' to wake up Yawnie. It doesn't collect any data, it just wants to hang out. \n\n📱 MOBILE NOTE: Yawnie is a bit shy on mobile, so he chooses his own spot (random placement), give him some time for v1! 🍓"
+    },
+    externalButtons: [
+        {
+            label: { en: "Download .EXE (Windows)", tr: "İndir .EXE (Windows)" },
+            url: "https://github.com/yawni3/My-corner/releases/download/v0.1/My.Corner_0.1.0_x64-setup.exe",
+            type: "download"
+        },
+        {
+            label: { en: "Download .MSI (Windows)", tr: "İndir .MSI (Windows)" },
+            url: "https://github.com/yawni3/My-corner/releases/download/v0.1/My.Corner_0.1.0_x64_en-US.msi",
+            type: "download"
+        },
+        {
+            label: { en: "Download .APK (Android)", tr: "İndir .APK (Android)" },
+            url: "https://github.com/yawni3/My-corner/releases/download/v0.1/app-universal-release-unsigned.apk",
+            type: "download"
+        },
+    ],
+    cover: "../images/projects/mycorner/mycorner.png",
+    stage: "active"
+},
+
 ];
