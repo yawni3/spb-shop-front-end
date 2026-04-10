@@ -88,7 +88,7 @@ export const projects = [
         },
         {
             label: { en: "Download .APK (Android)", tr: "İndir .APK (Android)" },
-            url: "https://github.com/yawni3/My-corner/releases/download/v0.1/app-universal-release-unsigned.apk",
+            url: "https://github.com/yawni3/My-corner/releases/download/v0.1/app-universal-release.apk",
             type: "download"
         },
     ],
