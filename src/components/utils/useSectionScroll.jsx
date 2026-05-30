@@ -3,6 +3,8 @@ import { useEffect } from "react";
 export const useSectionScroll = () => {
   useEffect(() => {
 
+     if (window.innerWidth <= 768) return;
+     
     const sections = document.querySelectorAll(".home-section");
     if (!sections.length) return;
 

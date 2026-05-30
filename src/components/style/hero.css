@@ -1,3 +1,69 @@
-.hero-left {
+/* V2 YAKINDA BANT */
+.v2-ribbon {
+  width: 100%;
+  background: #3d1a0e;
+  color: #f5c6d0;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  z-index: 10;
+}
+
+/* HERO */
+.hero {
   position: relative;
+  width: 100%;
+}
+
+/* BANNER */
+.hero-banner {
+  position: relative;
+  width: 100%;
+}
+
+.hero-banner img {
+  width: 100%;
+  display: block;
+}
+
+/* ÇİKOLATA ÇERÇEVE İÇİNE YAZILAN BAŞLIK */
+.hero-frame-text {
+  position: absolute;
+  top: 13%;
+  left: 70%;
+  width: 22%;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.hero-frame-text .section-title {
+  font-size: 1.3rem;
+  color: #3d1a0e;
+  margin: 0 0 4px 0;
+}
+
+.hero-frame-text .hero-sub {
+  font-size: 0.75rem;
+  color: #7a3b1e;
+  margin: 0;
+}
+
+/* MOBİL */
+@media (max-width: 768px) {
+  .hero-frame-text {
+    top: 12%;
+    left: 50%;
+    width: 55%;
+    transform: translateX(-50%);
+  }
+
+  .hero-frame-text .section-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-frame-text .hero-sub {
+    font-size: 1rem;
+  }
 }
