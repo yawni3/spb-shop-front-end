@@ -52,6 +52,19 @@
 
 /* MOBİL */
 @media (max-width: 768px) {
+  .v2-ribbon {
+  width: 100%;
+  }
+  .hero-banner {
+  position: relative;
+  width: 100%;
+  }
+
+ .hero-banner img {
+  width: 100%;
+  display: block;
+ }
+
   .hero-frame-text {
     top: 12%;
     left: 50%;
@@ -64,6 +77,7 @@
   }
 
   .hero-frame-text .hero-sub {
-    font-size: 0.86rem;
+    font-size: 0.80rem;
   }
+  
 }
