@@ -1,7 +1,8 @@
 
-h1, h2, h3{
-  font-family: "Lobster" cursive;
+h1, h2, h3 {
+  font-family: var(--font-heading);
 }
+
 button, .pixel-ui {
   font-family: var(--font-pixel);
 }
