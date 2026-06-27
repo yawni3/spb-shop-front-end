@@ -4,7 +4,7 @@ import Shop from "./pages/shop/shop.jsx";
 import About from "./pages/about/about.jsx";
 import ProductDetails from "./pages/product/productDetail.jsx";
 import Layout from "./Baselayout.jsx";
-import Checkout from './pages/Checkout/Checkout.jsx';
+import Checkout from './pages/checkout/checkout.jsx';
 import Cart from "./pages/cart/cart.jsx";
 import Home from "./pages/home/home.jsx"
 
