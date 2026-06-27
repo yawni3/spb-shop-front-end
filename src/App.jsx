@@ -6,13 +6,14 @@ import ProductDetails from "./pages/Product/Productdetail.jsx";
 import Layout from "./Baselayout.jsx";
 import Checkout from './pages/Checkout/Checkout.jsx';
 import Cart from "./pages/Cart/Cart.jsx";
-import Home from "./pages/Home/Home"
+//import Home from "./pages/Home/Home"
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
+        
+         {/* <Route index element={<Home />} />*/}
         <Route path="/about" element={<About />} />
         
         {/* ⭐ Shop ve filtreli sayfalar */}
