@@ -8,6 +8,7 @@ import Checkout from './pages/checkout/checkout.jsx';
 import Cart from "./pages/cart/cart.jsx";
 import Home from "./pages/home/home.jsx"
 
+
 function App() {
   return (
     <Routes>
