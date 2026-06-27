@@ -27,7 +27,6 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  useSectionScroll();
 
   useEffect(() => {
     const fetch = async () => {
