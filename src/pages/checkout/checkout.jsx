@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import ConfirmDialog from "../components/ConfirmDialog";
-import { useToast } from '../components/ToastProvider';
+import ConfirmDialog from "../../components/ConfirmDialog";
+import { useToast } from '../../components/ToastProvider';
 import "./checkout.css";
 
 // ⭐ Icon import'ları
-import iconMail from "../assets/icons/icon-mail.png";
-import CheckoutBanner from "../assets/Checkout-banner.png";
-import CheckoutThank from "../assets/checkout-thank.png";
+import iconMail from "../../assets/icons/icon-mail.png";
+import CheckoutBanner from "../../assets/Checkout-banner.png";
+import CheckoutThank from "../../assets/checkout-thank.png";
 
 const Checkout = () => {
   const [cart, setCart] = useState([]);
