@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./About.css";
+import "./about.css";
 import AboutBanner from "../../assets/about-banner.png";
 import iconDonut from "../../assets/icons/icon-donut.png";
 import iconGame from "../../assets/icons/icon-gameboy.png";
