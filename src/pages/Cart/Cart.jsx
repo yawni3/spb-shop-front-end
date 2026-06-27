@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ConfirmDialog from "../../components/ConfirmDialog.jsx";
+import ConfirmDialog from "../../components/Confirm-dialog.jsx";
 import "./Cart.css";
 
 // ⭐ Icon import'ları
