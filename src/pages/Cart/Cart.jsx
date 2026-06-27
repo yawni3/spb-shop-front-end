@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import ConfirmDialog from "../../components/Confirmdialog.jsx";
+import ConfirmDialog from "../../components/ConfirmDialog.jsx";
 import "./Cart.css";
 
 // ⭐ Icon import'ları
-import iconShop from "../assets/icons/icon-shop.png";
-import iconDonut from "./../assets/icons/icon-donut.png";
+import iconShop from "../../assets/icons/icon-shop.png";
+import iconDonut from "../../assets/icons/icon-donut.png";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
