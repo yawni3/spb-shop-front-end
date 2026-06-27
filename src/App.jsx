@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 
-import Shop from "./pages/Shop/Shop.jsx";
-import About from "./pages/About/About.jsx";
-import ProductDetails from "./pages/Product/Productdetail.jsx";
+import Shop from "./pages/shop/Shop.jsx";
+import About from "./pages/about/About.jsx";
+import ProductDetails from "./pages/product/Productdetail.jsx";
 import Layout from "./Baselayout.jsx";
 import Checkout from './pages/Checkout/Checkout.jsx';
-import Cart from "./pages/Cart/Cart.jsx";
-//import Home from "./pages/Home/Home"
+import Cart from "./pages/cart/Cart.jsx";
+import Home from "./pages/home/Home.jsx"
 
 function App() {
   return (
