@@ -1,22 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swa');
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Merienda:wght@600;700&family=Lobster&display=swap');
 
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
 :root {
-  --font-pixel: 'Pixelify Sans', cursive;
-  --font-heading: 'Lobster', sans-serif;
-  --font-body: 'Quicksand', sans-serif;
-  --font-two: "Lobster Two", sans-serif;
-  --color-bg: #2a1f1b;
-  --color-brown: #5e3a31;
-  --color-cream: #f4e7e3;
-  --color-pink: #ff71d0;
-  --color-blue:#78AEFF;
+  --bg-primary: #FFF8F4;
+  --bg-secondary: #FFF3EE;
+  --bg-soft-pink: #fad6df;
+  --bg-sidebar: #FFF7F3;
+
+  --bg-search: #fff1f5;        
+  --bg-announcement: #ffcfd4; 
+  --bg-nav-hover: #fdabc4;     
+  --bg-nav-active: #ff90b3;    
+
+  --border-primary: #D89A8B;
+  --border-strong: #6B3A2E;
+  --border-light: #F3C8BE;
+
+  --pink: #FF73B3;
+  --pink-soft: #F7AFCB;
+  --blue: #8CB7FF;
+  --lavender: #B58DFF;
+  --peach: #FFC7A3;
+  --gold: #FFB84D;
+
+  --text-heading: #4A2419;
+  --text-primary: #6E4A3D;
+  --text-secondary: #9B7B6D;
+  --text-muted: #C2A79A;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  --shadow-sm: 0 2px 8px rgba(74,36,25,0.08);
+  --shadow-md: 0 4px 16px rgba(74,36,25,0.12);
+  --shadow-lg: 0 8px 32px rgba(74,36,25,0.16);
 }
 
-body {
-  font-family: var(--font-body);
-  color: var(--color-brown);
-  background: var(--color-bg);
+html, body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: 'Merienda', cursive;
+  color: var(--text-heading);
+}
+
+button {
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body{
+  -webkit-scrollbar: display none; 
+   overflow-x: hidden;
+}
+
+/* ⭐ Yumuşak Ton Butonlar */
+.btn-primary,
+.btn-submit,
+.btn-checkout,
+.btn-shop {
+  background: var(--bg-nav-hover, #fdabc4);
+  color: var(--text-heading, #4A2419);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover,
+.btn-submit:hover,
+.btn-checkout:hover,
+.btn-shop:hover {
+  background: var(--bg-nav-active, #ff90b3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(253, 171, 196, 0.4);
+}
+
+.btn-secondary,
+.btn-continue,
+.back-to-cart {
+  background: var(--bg-search, #fff1f5);
+  color: var(--text-primary, #6E4A3D);
+  border: 2px solid var(--bg-nav-hover, #fdabc4);
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secondary:hover,
+.btn-continue:hover,
+.back-to-cart:hover {
+  background: var(--bg-announcement, #ffcfd4);
+  border-color: var(--bg-nav-active, #ff90b3);
 }

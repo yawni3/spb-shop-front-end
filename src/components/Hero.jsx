@@ -1,36 +1,42 @@
-import { useState } from "react";
-import FeedbackModal from "./FeedbackModal";
-import feedbackImg from "../assets/tiramisufeedback.png";
-import meowSound from "../assets/sounds/catmeow.mp3";
+import { useNavigate } from "react-router-dom";
 import pcBanner from "../assets/spb-pc-banner.png";
 import mobileBanner from "../assets/spb-mobile-banner.png";
 import "./style/hero.css";
 
-
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
-    <>
-      {/* V2 YAKINDA BANT */}
-      <div className="v2-ribbon">
-        ✨ v2 yakında geliyor &nbsp;·&nbsp; shop &nbsp;·&nbsp; bildirimler &nbsp;·&nbsp; çok daha fazlası ✨
+    <section className="hero">
+
+      {/* SOL — metin */}
+      <div className="hero-content">
+        <p className="hero-welcome">Welcome to</p>
+        <h1 className="hero-title">Sleepy Pie Bakery</h1>
+        <p className="hero-sub">
+          Cute pixels, cozy worlds &<br />handmade digital goodies.
+        </p>
+        <div className="hero-buttons">
+          <button className="btn-shop" onClick={() => navigate("/shop")}>
+            🛍️ Shop Now
+          </button>
+          <button className="btn-free" onClick={() => navigate("/freebies")}>
+            🎁 Freebies
+          </button>
+        </div>
       </div>
 
-      <section className="hero">
-        {/* BANNER */}
-        <div className="hero-banner">
-          <picture>
-            <source media="(max-width: 768px)" srcSet={mobileBanner} />
-            <img src={pcBanner} alt="Sleepy Pie Bakery" />
-          </picture>
+      {/* SAĞ — illustration */}
+      <div className="hero-illustration">
+       <div className="hero-illustration">
+       <img 
+          src={window.innerWidth <= 768 ? mobileBanner : pcBanner} 
+          alt="Sleepy Pie Bakery" 
+        />
+</div>
+      </div>
 
-          {/* ÇİKOLATA ÇERÇEVE İÇİNE BAŞLIKLAR */}
-          <div className="hero-frame-text">
-            <h1 className="hero-title section-title">Sleepy Pie Bakery</h1>
-            <p className="hero-sub">Cute pixels, cozy world & handmade sweets.</p>
-          </div>
-        </div>
-      </section>
-    </>
+    </section>
   );
 };
 

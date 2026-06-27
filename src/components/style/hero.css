@@ -1,83 +1,143 @@
-/* V2 YAKINDA BANT */
-.v2-ribbon {
-  width: 100%;
-  background: #3d1a0e;
-  color: #f5c6d0;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 0.88rem;
-  letter-spacing: 1px;
-  font-weight: 500;
-  z-index: 10;
-}
-
-/* HERO */
 .hero {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 48px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  min-height: 420px;
+}
+
+/* SOL — metin */
+.hero-content {
+  flex: 1;
+  max-width: 480px;
+}
+
+.hero-welcome {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.hero-title {
+  font-family: 'Lobster', cursive;
+  font-size: 3rem;
+  color: var(--text-heading);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-shop {
+  background: var(--pink);
+  color: white;
+  border: none;
+  padding: 13px 28px;
+  border-radius: var(--radius-xl);
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.2s;
+  box-shadow: 0 4px 14px rgba(255,115,179,0.35);
+}
+
+.btn-shop:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255,115,179,0.45);
+}
+
+.btn-free {
+  background: var(--bg-secondary);
+  color: var(--text-heading);
+  border: 2px solid var(--border-light);
+  padding: 13px 28px;
+  border-radius: var(--radius-xl);
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.2s;
+}
+
+.btn-free:hover {
+  background: #ffc9bb;
+  border-color: var(--border-primary);
+  transform: translateY(-2px);
+}
+
+/* SAĞ — illustration */
+.hero-illustration {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  max-width: 520px;
+}
+
+.hero-illustration img {
   width: 100%;
-}
-
-/* BANNER */
-.hero-banner {
-  position: relative;
-  width: 100%;
-}
-
-.hero-banner img {
-  width: 100%;
-  display: block;
-}
-
-/* ÇİKOLATA ÇERÇEVE İÇİNE YAZILAN BAŞLIK */
-.hero-frame-text {
-  position: absolute;
-  top: 13%;
-  left: 70%;
-  width: 22%;
-  text-align: center;
-  transform: translateX(-50%);
-}
-
-.hero-frame-text .section-title {
-  font-size: 1.3rem;
-  color: #3d1a0e;
-  margin: 0 0 4px 0;
-}
-
-.hero-frame-text .hero-sub {
-  font-size: 0.75rem;
-  color: #7a3b1e;
-  margin: 0;
+  max-width: 480px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(74,36,25,0.1));
 }
 
 /* MOBİL */
 @media (max-width: 768px) {
-  .v2-ribbon {
-  width: 100%;
-  }
-  .hero-banner {
-  position: relative;
-  width: 100%;
-  }
-
- .hero-banner img {
-  width: 100%;
-  display: block;
- }
-
-  .hero-frame-text {
-    top: 12%;
-    left: 50%;
-    width: 55%;
-    transform: translateX(-50%);
+  .hero {
+    flex-direction: column;
+    padding: 16px 20px 8px;
+    min-height: auto;
+    text-align: center;
+    gap: 0;
   }
 
-  .hero-frame-text .section-title {
-    font-size: 1rem;
+  .hero-content {
+    max-width: 100%;
+    padding-bottom: 20px;
   }
 
-  .hero-frame-text .hero-sub {
-    font-size: 0.80rem;
+  .hero-title { font-size: 1.8rem; }
+
+  .hero-sub {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
   }
-  
+
+  .hero-buttons {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .btn-shop, .btn-free {
+    padding: 11px 22px;
+    font-size: 0.88rem;
+  }
+
+.hero-illustration {
+    overflow: hidden;
+   
+  }
+
+  .hero-illustration img {
+    width: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain;
+    object-position: top;
+    margin-top: -10px;
+  }
 }
+

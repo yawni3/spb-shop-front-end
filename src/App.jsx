@@ -1,25 +1,34 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/home.jsx";
-import Projects from "./pages/Projects/projects.jsx";
-import ProjectDetail from "./pages/Projects/projectDetail.jsx";
-import Shop from "./pages/Shop/shop.jsx";
+import Home from "./pages/Home/Home.jsx";
+import Shop from "./pages/Shop/Shop.jsx";
 import About from "./pages/About/About.jsx";
-import Sources from "./pages/Sources/sources.jsx";
+import ProductDetails from "./pages/Product/Productdetail.jsx";
 import Layout from "./Baselayout.jsx";
-
+import Checkout from './pages/Checkout/Checkout.jsx';
+import Cart from "./pages/Cart";
 
 function App() {
   return (
-   <Routes>
-  <Route path="/" element={<Layout />}>
-    <Route path="/" element={ <Home />} />
-    <Route path="/projects" element={ <Projects />} />
-    <Route path="/projects/:id" element={ <ProjectDetail />} />
-    <Route path="/about" element={ <About />} />
-    <Route path="/sources" element={ <Sources />} />
-    <Route path="/shop" element={ <Shop />} />
-  </Route>
-   </Routes>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/about" element={<About />} />
+        
+        {/* ⭐ Shop ve filtreli sayfalar */}
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/assets" element={<Shop />} />
+        <Route path="/apps" element={<Shop />} />
+        <Route path="/wallpapers" element={<Shop />} />
+        <Route path="/freebies" element={<Shop />} />
+        
+        {/* ⭐ Ürün detay */}
+        <Route path="/product/:slug" element={<ProductDetails />} />
+        
+        {/* ⭐ Sepet ve Ödeme */}
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Route>
+    </Routes>
   );
 }
 
