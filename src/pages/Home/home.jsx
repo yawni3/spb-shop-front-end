@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Hero from "../../components/Hero";
-import { useSectionScroll } from "../../components/utils/useSectionScroll";
 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
