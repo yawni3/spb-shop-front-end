@@ -5,7 +5,7 @@ import About from "./pages/About/About.jsx";
 import ProductDetails from "./pages/Product/Productdetail.jsx";
 import Layout from "./Baselayout.jsx";
 import Checkout from './pages/Checkout/Checkout.jsx';
-import Cart from "./pages/Cart";
+import Cart from "./pages/Cart/Cart.jsx";
 
 
 function App() {
