@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import './style/Footer.css';
 import iconLogo from "./../assets/icons/icon-storefront.png";
 import creatorAvatar from "./../assets/creator-avatar.png";
-import { SiInstagram, SiYoutube, SiPinterest, SiItchdotio, SiX } from "react-icons/si";
+import { SiInstagram, SiYoutube, SiPinterest, SiItchdotio } from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -22,13 +22,13 @@ const Footer = () => {
             <a href="https://www.instagram.com/yawn.pie" target="_blank" rel="noopener noreferrer" className="social-btn">
               <SiInstagram />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="social-btn">
+            <a href="https://www.youtube.com/@yawn.pi3" target="_blank" rel="noopener noreferrer" className="social-btn">
               <SiYoutube />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="social-btn">
+            <a href="https://tr.pinterest.com/yawnpie/" target="_blank" rel="noopener noreferrer" className="social-btn">
               <SiPinterest />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="social-btn">
+            <a href="https://yawnpie.itch.io" target="_blank" rel="noopener noreferrer" className="social-btn">
               <SiItchdotio />
             </a>
           </div>
@@ -40,15 +40,15 @@ const Footer = () => {
           <div className="footer-creator">
             <img src={creatorAvatar} alt="Yawnpie" className="creator-avatar" />
             <div>
-              <p className="creator-name">Hi, I'm Yawnpie! </p>
+              <p className="creator-name">Hi, I'm Yawnpie! 🧙</p>
               <p className="creator-desc">Indie creator & pixel artist. I love baking cozy things for lovely people like you.</p>
               <a 
                 href="https://yawnie.sleepypiebakery.art" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="creator-link-btn"
+                className="creator-link"
               >
-                Meet the Creator 
+                <span>✨</span> Meet the Creator <span>→</span>
               </a>
             </div>
           </div>
@@ -68,10 +68,10 @@ const Footer = () => {
         <div className="footer-col">
           <h4>💌 Support</h4>
           <Link to="/about">About</Link>
-          <a href="#">FAQ</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Privacy Policy</a>
-          <a href="mailto:sleepypiebakery.contact@gmail.com">Contact Me</a>
+          <Link to="/faq">❓ FAQ</Link>
+          <Link to="/terms">📜 Terms of Use</Link>
+          <Link to="/privacy">🔒 Privacy Policy</Link>
+          <a href="mailto:sleepypiebakery.contact@gmail.com">📧 Contact Me</a>
           <span className="footer-email">sleepypiebakery.contact@gmail.com</span>
         </div>
 
@@ -82,7 +82,6 @@ const Footer = () => {
         <p>© 2026 Sleepy Pie Bakery by Yawnpie 🍓 All rights reserved.</p>
         <p className="footer-made">Made with 🍰 and lots of sleep.</p>
       </div>
-
     </footer>
   );
 };

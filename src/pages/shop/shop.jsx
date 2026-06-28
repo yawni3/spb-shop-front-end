@@ -38,8 +38,7 @@ const Shop = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8888/.netlify/functions';
-  
+    const API_URL = import.meta.env.VITE_API_URL || 'https://sleepypie-backend.onrender.com/api';
   // ⭐ Path'ten filtre belirleme
   const getFilterFromPath = () => {
     const path = location.pathname;

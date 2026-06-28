@@ -7,6 +7,9 @@ import Layout from "./Baselayout.jsx";
 import Checkout from './pages/checkout/checkout.jsx';
 import Cart from "./pages/cart/cart.jsx";
 import Home from "./pages/home/home.jsx";
+import FAQ from "./pages/FAQ.jsx";
+import Terms from "./pages/Terms.jsx";
+import Privacy from "./pages/Privacy.jsx";
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
         <Route path="/product/:slug" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Route>
     </Routes>
   );
