@@ -38,7 +38,8 @@ const Shop = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-    const API_URL = import.meta.env.VITE_API_URL || 'https://sleepypie-backend.onrender.com/api';
+  const API_URL = import.meta.env.VITE_API_URL || 'https://sleepypie-backend.onrender.com/api';
+  
   // ⭐ Path'ten filtre belirleme
   const getFilterFromPath = () => {
     const path = location.pathname;
@@ -132,13 +133,11 @@ const Shop = () => {
     }
   };
 
-  // ⭐ Ürün detayına yönlendirme
+  // ⭐ Ürün detayına yönlendirme - DÜZELTİLDİ
   const handleProductClick = (product) => {
-    if (product.slug) {
-      navigate(`/product/${product.slug}`);
-    } else {
-      navigate(`/shop/${product._id}`);
-    }
+    // Önce slug'ı dene, yoksa ID ile git
+    const identifier = product.slug || product._id;
+    navigate(`/product/${identifier}`);
   };
 
   return (
@@ -256,5 +255,6 @@ const Shop = () => {
     </div>
   );
 };
+
 
 export default Shop;
