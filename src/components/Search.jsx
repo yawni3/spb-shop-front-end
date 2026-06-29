@@ -17,7 +17,7 @@ const Search = ({
   const searchRef = useRef(null);
   const navigate = useNavigate();
 
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8888/.netlify/functions';
+  const API_URL = import.meta.env.VITE_API_URL || 'https://sleepypie-backend.onrender.com/api';
 
   // ⭐ initialValue değiştiğinde güncelle
   useEffect(() => {
@@ -73,14 +73,13 @@ const Search = ({
   }, [query, products]);
 
   const handleResultClick = (product) => {
-    setQuery("");
-    setShowResults(false);
-    if (onSearch) onSearch("");
-    if (product.slug) {
-      navigate(`/product/${product.slug}`);
-    } else {
-      navigate(`/shop/${product._id}`);
-    }
+  setQuery("");
+  setShowResults(false);
+  if (onSearch) onSearch("");
+  
+  // ⭐ Güvenli yönlendirme: slug varsa slug, yoksa ID
+  console.log('🔍 Search yönlendirme:', { slug: product.slug, id: product._id, identifier });
+  navigate(`/product/${identifier}`);
   };
 
   const handleSubmit = (e) => {

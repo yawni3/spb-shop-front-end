@@ -126,9 +126,11 @@ const Shop = () => {
     }
   };
 
-  const handleProductClick = (product) => {
-    navigate(`/product/${product.slug}`);
-  };
+ const handleProductClick = (product) => {
+  const identifier = product.slug || product._id;
+  console.log('🛒 Shop yönlendirme:', { slug: product.slug, id: product._id, identifier });
+  navigate(`/product/${identifier}`);
+};
 
   return (
     <div className="shop-page">

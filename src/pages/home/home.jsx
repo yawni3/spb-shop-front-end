@@ -114,6 +114,7 @@ const Home = () => {
                   onClick={(e) => {
                     e.stopPropagation();
                     navigate(`/product/${p.slug}`);
+
                   }}
                 >
                   🛒
