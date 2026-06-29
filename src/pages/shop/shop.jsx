@@ -11,7 +11,6 @@ import iconWallpaper from "../../assets/icons/icon-wallpaper.png";
 import iconAsset from "../../assets/icons/icon-asset-pack.png";
 import iconGift from "../../assets/icons/icon-gift.png";
 
-// ⭐ Kategoriler
 const categories = [
   { label: "All Products", value: "", img: iconShop },
   { label: "Assets", value: "asset-pack", img: iconDonut },
@@ -38,9 +37,8 @@ const Shop = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const API_URL = import.meta.env.VITE_API_URL || 'https://sleepypie-backend.onrender.com/api';
-  
-  // ⭐ Path'ten filtre belirleme
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const getFilterFromPath = () => {
     const path = location.pathname;
     if (path === "/assets") return "asset-pack";
@@ -50,12 +48,10 @@ const Shop = () => {
     return "";
   };
 
-  // ⭐ Query'den veya path'ten aktif kategori
   const queryCategory = searchParams.get("category") || "";
   const pathFilter = getFilterFromPath();
   const activeCategory = pathFilter || queryCategory;
 
-  // ⭐ URL'den search parametresini al
   useEffect(() => {
     const searchParam = searchParams.get("search") || "";
     if (searchParam) {
@@ -63,7 +59,6 @@ const Shop = () => {
     }
   }, [searchParams]);
 
-  // ⭐ Sayfa başlığını path'e göre belirle
   const getPageTitle = () => {
     const path = location.pathname;
     if (path === "/assets") return "Assets";
@@ -81,7 +76,7 @@ const Shop = () => {
         const data = Array.isArray(res.data) ? res.data : [];
         setProducts(data);
       } catch (err) {
-        console.error("❌ Shop - Ürün yükleme hatası:", err);
+        console.error("Shop products fetch error:", err);
       } finally {
         setLoading(false);
       }
@@ -89,7 +84,6 @@ const Shop = () => {
     fetchProducts();
   }, []);
 
-  // ⭐ Search handler
   const handleSearch = (query) => {
     setSearchQuery(query);
     if (query.trim()) {
@@ -122,7 +116,6 @@ const Shop = () => {
       return new Date(b.createdAt) - new Date(a.createdAt);
     });
 
-  // ⭐ Kategori tıklama işlemi
   const handleCategoryClick = (catValue) => {
     if (catValue === "") {
       navigate("/shop");
@@ -133,17 +126,12 @@ const Shop = () => {
     }
   };
 
-  // ⭐ Ürün detayına yönlendirme - DÜZELTİLDİ
   const handleProductClick = (product) => {
-    // Önce slug'ı dene, yoksa ID ile git
-    const identifier = product.slug || product._id;
-    navigate(`/product/${identifier}`);
+    navigate(`/product/${product.slug}`);
   };
 
   return (
     <div className="shop-page">
-
-      {/* SOL SIDEBAR */}
       <aside className="shop-sidebar">
         <h2>Categories</h2>
         <ul className="sidebar-cats">
@@ -166,10 +154,7 @@ const Shop = () => {
         </div>
       </aside>
 
-      {/* SAĞ İÇERİK */}
       <div className="shop-content">
-
-        {/* MOBİL KATEGORİ */}
         <div className="mobile-cats">
           {categories.map((cat, i) => (
             <button
@@ -183,12 +168,9 @@ const Shop = () => {
           ))}
         </div>
 
-        {/* BAŞLIK + FİLTRELER */}
         <div className="shop-header">
           <h1>{getPageTitle()}</h1>
           <div className="shop-filters">
-
-            {/* CUSTOM SORT */}
             <div className="sort-box" onClick={() => setSortOpen(!sortOpen)}>
               <span>{sortOptions.find(o => o.value === sort)?.label}</span>
               <span className="sort-arrow">{sortOpen ? "▲" : "▼"}</span>
@@ -206,11 +188,9 @@ const Shop = () => {
                 </div>
               )}
             </div>
-
           </div>
         </div>
 
-        {/* ÜRÜN GRİDİ */}
         {loading ? (
           <p className="shop-loading">Yükleniyor... 🍰</p>
         ) : filtered.length === 0 ? (
@@ -250,11 +230,9 @@ const Shop = () => {
             ))}
           </div>
         )}
-
       </div>
     </div>
   );
 };
-
 
 export default Shop;

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import './productdetail.css';
-
 import { useToast } from '../../components/ToastProvider';
 
 const ProductDetail = () => {
@@ -15,7 +14,7 @@ const ProductDetail = () => {
   const [relatedProducts, setRelatedProducts] = useState([]);
 
   const showToast = useToast();
-  const API_URL = import.meta.env.VITE_API_URL || 'https://sleepypie-backend.onrender.com/api';
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     fetchProduct();
@@ -48,7 +47,7 @@ const ProductDetail = () => {
       setRelatedProducts(related);
       
     } catch (err) {
-      console.error('❌ Ürün yükleme hatası:', err);
+      console.error('Product detail fetch error:', err);
       setError(err.message || 'Ürün yüklenirken bir hata oluştu');
     } finally {
       setLoading(false);
@@ -128,9 +127,7 @@ const ProductDetail = () => {
 
   return (
     <div className="product-details">
-      
       <div className="product-grid">
-        {/* Image Gallery */}
         <div className="product-gallery">
           <div className="main-image">
             <img src={mainImage} alt={name} />
@@ -155,7 +152,6 @@ const ProductDetail = () => {
           )}
         </div>
 
-        {/* Product Info */}
         <div className="product-info">
           <div className="breadcrumb">
             <Link to="/">Ana Sayfa</Link>
@@ -334,7 +330,6 @@ const ProductDetail = () => {
         </div>
       </div>
 
-      {/* Related Products */}
       {relatedProducts.length > 0 && (
         <div className="also-like">
           <h2>🍪 Bunlar da ilgini çekebilir</h2>

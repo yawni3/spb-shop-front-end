@@ -5,7 +5,6 @@ import ConfirmDialog from "../../components/ConfirmDialog";
 import { useToast } from '../../components/ToastProvider';
 import "./checkout.css";
 
-// ⭐ Icon import'ları
 import iconMail from "../../assets/icons/icon-mail.png";
 import CheckoutBanner from "../../assets/Checkout-banner.png";
 import CheckoutThank from "../../assets/checkout-thank.png";
@@ -22,7 +21,7 @@ const Checkout = () => {
   const [confirmOpen, setConfirmOpen] = useState(false);
 
   const navigate = useNavigate();
-  const API_URL = import.meta.env.VITE_API_URL || 'https://sleepypie-backend.onrender.com/api';
+  const API_URL = import.meta.env.VITE_API_URL;
   const showToast = useToast();
 
   useEffect(() => {
@@ -82,7 +81,7 @@ const Checkout = () => {
       showToast('🎉 Siparişiniz başarıyla oluşturuldu!', 'success');
 
     } catch (err) {
-      console.error('❌ Sipariş hatası:', err);
+      console.error('Order creation error:', err);
       setError(err.response?.data?.error || 'Sipariş oluşturulurken hata oluştu!');
       showToast('❌ Sipariş oluşturulurken hata oluştu!', 'error');
     } finally {
@@ -96,7 +95,6 @@ const Checkout = () => {
 
   const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
 
-  // Order complete page
   if (orderComplete) {
     return (
       <div className="checkout-container">
@@ -126,13 +124,12 @@ const Checkout = () => {
         isOpen={confirmOpen}
         onConfirm={handleConfirmOrder}
         onCancel={handleCancelOrder}
-        title=" Siparişi Onayla"
+        title="Siparişi Onayla"
         message="Siparişinizi tamamlamak istediğinizden emin misiniz?"
         confirmText="Evet, Siparişi Tamamla"
         cancelText="Hayır, Vazgeç"
       />
 
-      {/* Banner */}
       <div className="checkout-banner">
         <img src={CheckoutBanner} alt="Sleepy Pie Bakery" />
         <div className="banner-text">
@@ -143,7 +140,6 @@ const Checkout = () => {
 
       <div className="checkout-content">
         <div className="checkout-form">
-          {/* ⭐ Sipariş Bilgileri başlığı - Mail iconu */}
           <h3>
             <img src={iconMail} alt="Mail" className="title-icon" />
             Sipariş Bilgileri

@@ -9,10 +9,9 @@ const NewProductNotification = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [dismissed, setDismissed] = useState(false);
 
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8888/.netlify/functions';
+  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    // ⭐ Daha önce kapatıldı mı kontrol et
     const dismissedTime = localStorage.getItem('new_product_dismissed');
     if (dismissedTime) {
       const elapsed = Date.now() - parseInt(dismissedTime);
@@ -22,13 +21,11 @@ const NewProductNotification = () => {
       }
     }
 
-    // ⭐ Yeni ürünleri kontrol et (son 24 saat)
     const checkNewProducts = async () => {
       try {
         const res = await axios.get(`${API_URL}/products`);
         const products = res.data;
         
-        // Son 24 saatte eklenen ürünler
         const twentyFourHoursAgo = Date.now() - 24 * 60 * 60 * 1000;
         const newItems = products.filter(p => 
           p.active && 
@@ -40,11 +37,10 @@ const NewProductNotification = () => {
           setShow(true);
         }
       } catch (err) {
-        console.error('Yeni ürün kontrol hatası:', err);
+        console.error('New product check error:', err);
       }
     };
 
-    // ⭐ Sayfa yüklendikten 3 saniye sonra göster
     const timer = setTimeout(() => {
       if (!dismissed) {
         checkNewProducts();
@@ -54,14 +50,12 @@ const NewProductNotification = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // ⭐ Bildirimi kapat
   const handleDismiss = () => {
     setShow(false);
     setDismissed(true);
     localStorage.setItem('new_product_dismissed', Date.now().toString());
   };
 
-  // ⭐ Sonraki ürüne geç
   const handleNext = () => {
     if (currentIndex < newProducts.length - 1) {
       setCurrentIndex(currentIndex + 1);
@@ -70,7 +64,6 @@ const NewProductNotification = () => {
     }
   };
 
-  // ⭐ Önceki ürüne geç
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);

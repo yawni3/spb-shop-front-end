@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Hero from "../../components/Hero";
-
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import './home.css';
@@ -11,7 +10,6 @@ import iconWallpaper from "../../assets/icons/icon-wallpaper.png";
 import iconGift from "../../assets/icons/icon-gift.png";
 import iconScroll from "../../assets/icons/icon-scroll.png";
 import iconDonut from "../../assets/icons/icon-donut.png";
-
 
 const categories = [
   { label: "Assets", icon: iconDonut, value: "asset-pack" },
@@ -27,15 +25,14 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-
   useEffect(() => {
     const fetch = async () => {
       try {
-       const res = await axios.get(`${import.meta.env.VITE_API_URL}/products`);
-       const data = Array.isArray(res.data) ? res.data : [];
-       setNewProducts(data.slice(0, 4));
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/products`);
+        const data = Array.isArray(res.data) ? res.data : [];
+        setNewProducts(data.slice(0, 4));
       } catch (err) {
-        console.error(err);
+        console.error("Home products fetch error:", err);
       } finally {
         setLoading(false);
       }
@@ -45,13 +42,10 @@ const Home = () => {
 
   return (
     <div className="home">
-
-      {/* HERO */}
       <section className="home-section hero-section">
         <Hero />
       </section>
 
-      {/* SHOP BY CATEGORY */}
       <section className="home-section category-section">
         <div className="section-header">
           <h2 className="section-title">✨ Shop by Category ✨</h2>
@@ -74,7 +68,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FRESH OUT OF THE OVEN */}
       <section className="home-section fresh-section">
         <div className="section-header">
           <h2 className="section-title">🧁 Fresh Out of the Oven</h2>
@@ -93,7 +86,7 @@ const Home = () => {
               <div
                 key={p._id}
                 className="product-card"
-                onClick={() => navigate(`/shop/${p._id}`)}
+                onClick={() => navigate(`/product/${p.slug}`)}
               >
                 {p.isFree && <span className="badge-free">FREE</span>}
                 {!p.isFree && <span className="badge-paid">NEW</span>}
@@ -120,7 +113,7 @@ const Home = () => {
                   className="card-cart-btn"
                   onClick={(e) => {
                     e.stopPropagation();
-                    navigate(`/shop/${p._id}`);
+                    navigate(`/product/${p.slug}`);
                   }}
                 >
                   🛒
@@ -130,7 +123,6 @@ const Home = () => {
           </div>
         )}
       </section>
-
     </div>
   );
 };

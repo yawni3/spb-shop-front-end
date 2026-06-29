@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import ConfirmDialog from "../../components/ConfirmDialog";
 import "./cart.css";
 
-// ⭐ Icon import'ları
 import iconShop from "../../assets/icons/icon-shop.png";
 import iconDonut from "../../assets/icons/icon-donut.png";
 
@@ -65,7 +64,6 @@ const Cart = () => {
       />
 
       <div className="cart-container">
-        {/*  Sepetiniz başlığı - Shop iconu */}
         <h1>
           <img src={iconShop} alt="Shop" className="title-icon" />
           Sepetiniz
@@ -76,10 +74,9 @@ const Cart = () => {
             <span className="empty-icon">🧁</span>
             <h2>Sepetiniz Boş</h2>
             <p>Hemen alışverişe başlayın!</p>
-            {/*  Alışverişe Başla - Donut iconu */}
             <Link to="/shop" className="btn-shop">
-             Alışverişe Başla
-    </Link>
+              Alışverişe Başla
+            </Link>
           </div>
         ) : (
           <>
