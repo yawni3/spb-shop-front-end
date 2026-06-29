@@ -10,18 +10,21 @@ import Home from "./pages/home/home.jsx";
 import FAQ from "./pages/FAQ.jsx";
 import Terms from "./pages/Terms.jsx";
 import Privacy from "./pages/Privacy.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 function App() {
   return (
     <Routes>
+      <Route path="*" element={<NotFound />} />
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/assets" element={<Shop />} />
-        <Route path="/apps" element={<Shop />} />
-        <Route path="/wallpapers" element={<Shop />} />
-        <Route path="/freebies" element={<Shop />} />
+        <Route path="/shop" element={<Navigate to="https://shop.sleepypiebakery.art" replace />} />
+        <Route path="/shop/*" element={<Navigate to="https://shop.sleepypiebakery.art" replace />} />
+        <Route path="/assets" element={<Navigate to="https://shop.sleepypiebakery.art/assets" replace />} />
+        <Route path="/apps" element={<Navigate to="https://shop.sleepypiebakery.art/apps" replace />} />
+        <Route path="/wallpapers" element={<Navigate to="https://shop.sleepypiebakery.art/wallpapers" replace />} />
+        <Route path="/freebies" element={<Navigate to="https://shop.sleepypiebakery.art/freebies" replace />} />
         <Route path="/product/:slug" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
