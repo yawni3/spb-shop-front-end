@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom"; 
 
 import Shop from "./pages/shop/shop.jsx";
 import About from "./pages/about/about.jsx";
