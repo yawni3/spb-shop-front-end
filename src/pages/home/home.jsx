@@ -93,7 +93,7 @@ const Home = () => {
               <div
                 key={p._id}
                 className="product-card"
-                onClick={() => navigate(`/shop/${p._id}`)}
+                onClick={() => navigate(`/shop/${p._slug}`)}
               >
                 {p.isFree && <span className="badge-free">FREE</span>}
                 {!p.isFree && <span className="badge-paid">NEW</span>}
@@ -120,7 +120,7 @@ const Home = () => {
                   className="card-cart-btn"
                   onClick={(e) => {
                     e.stopPropagation();
-                    navigate(`/shop/${p._id}`);
+                    navigate(`/shop/${p._slug}`);
                   }}
                 >
                   🛒
