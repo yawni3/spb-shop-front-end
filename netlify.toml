@@ -33,38 +33,4 @@
 [build.environment]
   SECRETS_SCAN_ENABLED = "false"
   
-  [[redirects]]
-  from = "https://shop.sleepypiebakery.art/*"
-  to = "/shop/:splat"
-  status = 200
-
-# ⭐ Ana domain'de shop'a gelenleri subdomain'e yönlendir
-[[redirects]]
-  from = "/shop/*"
-  to = "https://shop.sleepypiebakery.art/:splat"
-  status = 301
-
-[[redirects]]
-  from = "/assets"
-  to = "https://shop.sleepypiebakery.art/assets"
-  status = 301
-
-[[redirects]]
-  from = "/apps"
-  to = "https://shop.sleepypiebakery.art/apps"
-  status = 301
-
-[[redirects]]
-  from = "/wallpapers"
-  to = "https://shop.sleepypiebakery.art/wallpapers"
-  status = 301
-
-[[redirects]]
-  from = "/freebies"
-  to = "https://shop.sleepypiebakery.art/freebies"
-  status = 301
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  
