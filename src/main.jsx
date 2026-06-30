@@ -5,6 +5,18 @@ import './index.css'
 import App from './App.jsx'
 import ToastProvider from './components/ToastProvider.jsx';
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/OneSignalSDKWorker.js')
+      .then(registration => {
+        console.log('✅ ServiceWorker registered successfully:', registration);
+      })
+      .catch(error => {
+        console.error('❌ ServiceWorker registration failed:', error);
+      });
+  });
+}
+
 createRoot(document.getElementById("root")).render(
   <ToastProvider>
   <BrowserRouter>

@@ -2,18 +2,26 @@
   command = "npm run build"
   publish = "dist"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
 [[headers]]
   for = "/OneSignalSDKWorker.js"
   [headers.values]
     Content-Type = "application/javascript"
     Cache-Control = "no-cache, no-store, must-revalidate"
     X-Content-Type-Options = "nosniff"
+    Access-Control-Allow-Origin = "*"
+
+# ⭐ Tüm JavaScript dosyaları için CORS
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
     
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+
 [[headers]]
   for = "/*.html"
   [headers.values]
