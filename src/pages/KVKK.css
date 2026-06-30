@@ -1,0 +1,114 @@
+.kvkk-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+  min-height: 60vh;
+}
+
+.kvkk-container {
+  background: white;
+  border-radius: var(--radius-lg, 20px);
+  padding: 40px 48px;
+  box-shadow: var(--shadow-sm, 0 2px 8px rgba(74,36,25,0.06));
+  border: 1px solid var(--border-light, #F3C8BE);
+}
+
+.kvkk-container h1 {
+  font-family: 'Merienda', cursive;
+  font-size: 2.2rem;
+  color: var(--text-heading, #4A2419);
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.kvkk-date {
+  text-align: center;
+  color: var(--text-muted, #C2A79A);
+  font-size: 0.9rem;
+  margin-bottom: 32px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.kvkk-section {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-light, #F3C8BE);
+}
+
+.kvkk-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.kvkk-section h2 {
+  font-family: 'Merienda', cursive;
+  font-size: 1.2rem;
+  color: var(--text-heading, #4A2419);
+  margin-bottom: 10px;
+}
+
+.kvkk-section p {
+  color: var(--text-primary, #6E4A3D);
+  line-height: 1.7;
+  font-family: 'Nunito', sans-serif;
+  margin-bottom: 8px;
+}
+
+.kvkk-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.kvkk-section ul li {
+  color: var(--text-primary, #6E4A3D);
+  line-height: 1.8;
+  font-family: 'Nunito', sans-serif;
+  padding: 4px 0;
+  border-bottom: 1px solid #f8f4f0;
+}
+
+.kvkk-section ul li:last-child {
+  border-bottom: none;
+}
+
+.kvkk-section a {
+  color: var(--pink, #FF73B3);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.kvkk-section a:hover {
+  text-decoration: underline;
+  color: var(--text-heading, #4A2419);
+}
+
+.kvkk-section strong {
+  color: var(--text-heading, #4A2419);
+}
+
+/* ⭐ Responsive */
+@media (max-width: 768px) {
+  .kvkk-container {
+    padding: 24px 20px;
+  }
+  
+  .kvkk-container h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .kvkk-container {
+    padding: 18px 16px;
+  }
+  
+  .kvkk-container h1 {
+    font-size: 1.5rem;
+  }
+  
+  .kvkk-section h2 {
+    font-size: 1rem;
+  }
+}
