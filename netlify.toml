@@ -11,7 +11,8 @@
   for = "/OneSignalSDKWorker.js"
   [headers.values]
     Content-Type = "application/javascript"
-    Cache-Control = "no-cache"
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    X-Content-Type-Options = "nosniff"
     
 [[headers]]
   for = "/*.html"
