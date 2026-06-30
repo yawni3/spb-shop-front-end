@@ -78,6 +78,8 @@ const Checkout = () => {
       setOrderNumber(response.data.order?.orderNumber || '');
       setOrderComplete(true);
       localStorage.removeItem('cart');
+      window.dispatchEvent(new Event('cartUpdated'));
+      window.dispatchEvent(new Event('storage'));
       showToast('🎉 Siparişiniz başarıyla oluşturuldu!', 'success');
 
     } catch (err) {
@@ -173,7 +175,6 @@ const Checkout = () => {
               />
               <span className="form-hint">Sipariş onayı ve indirme linkleri bu adrese gönderilecek.</span>
             </div>
-
             <div className="form-group checkbox-group">
               <label>
                 <input

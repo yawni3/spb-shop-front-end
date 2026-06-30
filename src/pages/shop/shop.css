@@ -237,12 +237,12 @@
 }
 
 .badge-free {
-  background: #c8f0de;
-  color: #1a5c3a;
+  background: #0077be;  /* ⭐ Mavi */
+  color: white;
 }
 
 .badge-new {
-  background: var(--pink);
+  background: #f39c12;  /* Turuncu */
   color: white;
 }
 

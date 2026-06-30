@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# ⭐ Tüm sayfaları index'e yönlendir
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# ⭐ Product sayfaları için özel
+[[redirects]]
+  from = "/product/*"
+  to = "/index.html"
+  status = 200
+
+# ⭐ Shop subdomain için
+[[redirects]]
+  from = "https://shop.sleepypiebakery.art/*"
+  to = "/index.html"
+  status = 200

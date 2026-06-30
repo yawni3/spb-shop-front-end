@@ -38,10 +38,12 @@ const Navbar = () => {
     window.addEventListener('storage', updateCartCount);
     const handleCartUpdate = () => updateCartCount();
     window.addEventListener('cartUpdated', handleCartUpdate);
+    window.addEventListener('focus', updateCartCount);
 
     return () => {
       window.removeEventListener('storage', updateCartCount);
       window.removeEventListener('cartUpdated', handleCartUpdate);
+      window.addEventListener('focus', updateCartCount);
     };
   }, []);
 
