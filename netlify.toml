@@ -8,6 +8,12 @@
   status = 200
 
 [[headers]]
+  for = "/OneSignalSDKWorker.js"
+  [headers.values]
+    Content-Type = "application/javascript"
+    Cache-Control = "no-cache"
+    
+[[headers]]
   for = "/*.html"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
