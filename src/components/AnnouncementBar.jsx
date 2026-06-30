@@ -2,10 +2,10 @@ import { useState } from "react";
 import "./style/AnnouncementBar.css";
 
 const announcements = [
-  "🍰 New Wallpapers out now!",
-  "🎨 Sticker Packs Available!",
+  "🍰 Wallpapers out soon!",
+  "🎨 Sticker Packs soon!",
   "✨ Cooky's Coming soon!",
-  "🎁 Free Pixel Icons available!",
+  "🎁 Free Pixel Icons coming soon!",
 ];
 
 const AnnouncementBar = () => {

@@ -24,8 +24,18 @@ const Privacy = () => {
         </div>
 
         <div className="privacy-section">
-          <h2>4. İletişim</h2>
-          <p>Gizlilik politikası ile ilgili sorularınız için: sleepypiebakery.contact@gmail.com</p>
+          <h2>4. Çerezler</h2>
+          <p>Site, kullanıcı deneyimini iyileştirmek için çerezler kullanır. Çerezleri tarayıcı ayarlarınızdan devre dışı bırakabilirsiniz.</p>
+        </div>
+
+        <div className="privacy-section">
+          <h2>5. İletişim</h2>
+          <p>
+            Gizlilik politikası ile ilgili sorularınız için: 
+            <a href="mailto:sleepypiebakery.contact@gmail.com" className="privacy-email">
+              sleepypiebakery.contact@gmail.com
+            </a>
+          </p>
         </div>
       </div>
     </div>

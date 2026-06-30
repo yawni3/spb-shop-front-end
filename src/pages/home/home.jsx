@@ -122,7 +122,7 @@ const Home = () => {
                       <h3>{p.name}</h3>
                       <p className="card-cat">{p.category}</p>
                       <p className="card-price">
-                        {p.isFree ? "🆓 Free" : `$${p.price}`}
+                        {p.isFree ? " Free" : `$${p.price}`}
                       </p>
                     </div>
                   </div>
