@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useSearchParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./shop.css";
+import KeyboardNavigation from "../../components/KeyboardNavigation";
 
 import iconShop from "../../assets/icons/icon-shop.png";
 import iconDonut from "../../assets/icons/icon-donut.png";
@@ -126,114 +127,125 @@ const Shop = () => {
     }
   };
 
- const handleProductClick = (product) => {
-  const identifier = product.slug || product._id;
-  console.log('🛒 Shop yönlendirme:', { slug: product.slug, id: product._id, identifier });
-  navigate(`/product/${identifier}`);
-};
+  const handleProductClick = (product) => {
+    const identifier = product.slug || product._id;
+    console.log('🛒 Shop yönlendirme:', { slug: product.slug, id: product._id, identifier });
+    navigate(`/product/${identifier}`);
+  };
 
   return (
-    <div className="shop-page">
-      <aside className="shop-sidebar">
-        <h2>Categories</h2>
-        <ul className="sidebar-cats">
-          {categories.map((cat, i) => (
-            <li
-              key={i}
-              className={`sidebar-cat ${activeCategory === cat.value && cat.value !== "" ? "active" : ""} ${!cat.value && !activeCategory ? "active" : ""}`}
-              onClick={() => handleCategoryClick(cat.value)}
-            >
-              <img src={cat.img} alt={cat.label} />
-              <span>{cat.label}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="sidebar-widget">
-          <img src={iconGift} alt="treat" />
-          <p>Need a treat?</p>
-          <span>Take a break! 🍰</span>
-        </div>
-      </aside>
-
-      <div className="shop-content">
-        <div className="mobile-cats">
-          {categories.map((cat, i) => (
-            <button
-              key={i}
-              className={`cat-chip ${activeCategory === cat.value && cat.value !== "" ? "active" : ""} ${!cat.value && !activeCategory ? "active" : ""}`}
-              onClick={() => handleCategoryClick(cat.value)}
-            >
-              <img src={cat.img} alt={cat.label} />
-              <span>{cat.label}</span>
-            </button>
-          ))}
-        </div>
-
-        <div className="shop-header">
-          <h1>{getPageTitle()}</h1>
-          <div className="shop-filters">
-            <div className="sort-box" onClick={() => setSortOpen(!sortOpen)}>
-              <span>{sortOptions.find(o => o.value === sort)?.label}</span>
-              <span className="sort-arrow">{sortOpen ? "▲" : "▼"}</span>
-              {sortOpen && (
-                <div className="sort-dropdown">
-                  {sortOptions.map((o, i) => (
-                    <div
-                      key={i}
-                      className={`sort-option ${sort === o.value ? "active" : ""}`}
-                      onClick={e => { e.stopPropagation(); setSort(o.value); setSortOpen(false); }}
-                    >
-                      {o.label}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {loading ? (
-          <p className="shop-loading">Yükleniyor... 🍰</p>
-        ) : filtered.length === 0 ? (
-          <p className="shop-empty">Ürün bulunamadı 🥧</p>
-        ) : (
-          <div className="shop-grid">
-            {filtered.map(p => (
-              <div
-                key={p._id}
-                className="shop-card"
-                onClick={() => handleProductClick(p)}
+    <>
+      <KeyboardNavigation
+        items={products}
+        itemSelector=".shop-card"
+        basePath="/product"
+      />
+      
+      <div className="shop-page">
+        <aside className="shop-sidebar">
+          <h2>Categories</h2>
+          <ul className="sidebar-cats">
+            {categories.map((cat, i) => (
+              <li
+                key={i}
+                className={`sidebar-cat ${activeCategory === cat.value && cat.value !== "" ? "active" : ""} ${!cat.value && !activeCategory ? "active" : ""}`}
+                onClick={() => handleCategoryClick(cat.value)}
               >
-                {p.isFree
-                  ? <span className="badge badge-free">Free Sample</span>
-                  : <span className="badge badge-new">NEW</span>
-                }
-                {p.bannerUrl
-                  ? <img src={p.bannerUrl} alt={p.name} className="shop-card-banner" />
-                  : <div className="shop-card-placeholder" />
-                }
-                <div className="shop-card-body">
-                  <h3>{p.name}</h3>
-                  <p className="shop-card-cat">{p.category}</p>
-                  <div className="shop-card-footer">
-                    <span className="shop-card-price">
-                      {p.isFree ? "FREE" : `$${p.price}`}
-                    </span>
-                    <button
-                      className="shop-card-btn"
-                      onClick={e => { e.stopPropagation(); handleProductClick(p); }}
-                    >
-                      🛒
-                    </button>
-                  </div>
-                </div>
-              </div>
+                <img src={cat.img} alt={cat.label} />
+                <span>{cat.label}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="sidebar-widget">
+            <img src={iconGift} alt="treat" />
+            <p>Need a treat?</p>
+            <span>Take a break! 🍰</span>
+          </div>
+        </aside>
+
+        <div className="shop-content">
+          <div className="mobile-cats">
+            {categories.map((cat, i) => (
+              <button
+                key={i}
+                className={`cat-chip ${activeCategory === cat.value && cat.value !== "" ? "active" : ""} ${!cat.value && !activeCategory ? "active" : ""}`}
+                onClick={() => handleCategoryClick(cat.value)}
+              >
+                <img src={cat.img} alt={cat.label} />
+                <span>{cat.label}</span>
+              </button>
             ))}
           </div>
-        )}
+
+          <div className="shop-header">
+            <h1>{getPageTitle()}</h1>
+            <div className="shop-filters">
+              <div className="sort-box" onClick={() => setSortOpen(!sortOpen)}>
+                <span>{sortOptions.find(o => o.value === sort)?.label}</span>
+                <span className="sort-arrow">{sortOpen ? "▲" : "▼"}</span>
+                {sortOpen && (
+                  <div className="sort-dropdown">
+                    {sortOptions.map((o, i) => (
+                      <div
+                        key={i}
+                        className={`sort-option ${sort === o.value ? "active" : ""}`}
+                        onClick={e => { e.stopPropagation(); setSort(o.value); setSortOpen(false); }}
+                      >
+                        {o.label}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {loading ? (
+            <p className="shop-loading">Yükleniyor... 🍰</p>
+          ) : filtered.length === 0 ? (
+            <p className="shop-empty">Ürün bulunamadı 🥧</p>
+          ) : (
+            <div className="shop-grid">
+              {filtered.map(p => (
+                <div
+                  key={p._id}
+                  className="shop-card"
+                  data-slug={p.slug}
+                  data-id={p._id}
+                  tabIndex={0}
+                  onClick={() => handleProductClick(p)}
+                >
+                  {p.isFree
+                    ? <span className="badge badge-free">Free Sample</span>
+                    : <span className="badge badge-new">NEW</span>
+                  }
+                  {p.bannerUrl
+                    ? <img src={p.bannerUrl} alt={p.name} className="shop-card-banner" />
+                    : <div className="shop-card-placeholder" />
+                  }
+                  <div className="shop-card-body">
+                    <h3>{p.name}</h3>
+                    <p className="shop-card-cat">{p.category}</p>
+                    <div className="shop-card-footer">
+                      <span className="shop-card-price">
+                        {p.isFree ? "FREE" : `$${p.price}`}
+                      </span>
+                      <button
+                        className="shop-card-btn"
+                        onClick={e => { e.stopPropagation(); handleProductClick(p); }}
+                      >
+                        🛒
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

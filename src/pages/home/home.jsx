@@ -3,6 +3,7 @@ import Hero from "../../components/Hero";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import './home.css';
+import KeyboardNavigation from '../../components/KeyboardNavigation';
 
 import iconAsset from "../../assets/icons/icon-asset-pack.png";
 import iconGame from "../../assets/icons/icon-gameboy.png";
@@ -40,91 +41,108 @@ const Home = () => {
     fetch();
   }, []);
 
+  // ⭐ Ürün detayına yönlendirme
+  const handleProductClick = (product) => {
+    const identifier = product.slug || product._id;
+    navigate(`/product/${identifier}`);
+  };
+
   return (
-    <div className="home">
-      <section className="home-section hero-section">
-        <Hero />
-      </section>
+    <>
+      {/* ⭐ KeyboardNavigation - itemSelector CSS selector olmalı! */}
+      <KeyboardNavigation
+        items={newProducts}
+        itemSelector=".product-card"
+        basePath="/product"
+      />
 
-      <section className="home-section category-section">
-        <div className="section-header">
-          <h2 className="section-title">✨ Shop by Category ✨</h2>
-          <button className="view-all" onClick={() => navigate("/shop")}>
-            View all
-          </button>
-        </div>
+      <div className="home">
+        <section className="home-section hero-section">
+          <Hero />
+        </section>
 
-        <div className="category-grid">
-          {categories.map((cat, i) => (
-            <div
-              key={i}
-              className="category-card"
-              onClick={() => navigate(`/shop?category=${cat.value}`)}
-            >
-              <img src={cat.icon} alt={cat.label} />
-              <span>{cat.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+        <section className="home-section category-section">
+          <div className="section-header">
+            <h2 className="section-title">✨ Shop by Category ✨</h2>
+            <button className="view-all" onClick={() => navigate("/shop")}>
+              View all
+            </button>
+          </div>
 
-      <section className="home-section fresh-section">
-        <div className="section-header">
-          <h2 className="section-title">🧁 Fresh Out of the Oven</h2>
-          <button className="view-all" onClick={() => navigate("/shop")}>
-            View all
-          </button>
-        </div>
-
-        {loading ? (
-          <p className="loading-text">Yükleniyor... 🍰</p>
-        ) : newProducts.length === 0 ? (
-          <p className="empty-text">Yakında yeni ürünler geliyor! 🥧</p>
-        ) : (
-          <div className="products-row">
-            {newProducts.map((p) => (
+          <div className="category-grid">
+            {categories.map((cat, i) => (
               <div
-                key={p._id}
-                className="product-card"
-                onClick={() => navigate(`/product/${p.slug}`)}
+                key={i}
+                className="category-card"
+                onClick={() => navigate(`/shop?category=${cat.value}`)}
               >
-                {p.isFree && <span className="badge-free">FREE</span>}
-                {!p.isFree && <span className="badge-paid">NEW</span>}
-
-                {p.bannerUrl
-                  ? <img src={p.bannerUrl} alt={p.name} className="card-banner" />
-                  : <div className="card-banner-placeholder" />
-                }
-
-                <div className="card-body">
-                  {p.thumbnailUrl && (
-                    <img src={p.thumbnailUrl} alt={p.name} className="card-thumb" />
-                  )}
-                  <div className="card-info">
-                    <h3>{p.name}</h3>
-                    <p className="card-cat">{p.category}</p>
-                    <p className="card-price">
-                      {p.isFree ? "🆓 Free" : `$${p.price}`}
-                    </p>
-                  </div>
-                </div>
-
-                <button
-                  className="card-cart-btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    navigate(`/product/${p.slug}`);
-
-                  }}
-                >
-                  🛒
-                </button>
+                <img src={cat.icon} alt={cat.label} />
+                <span>{cat.label}</span>
               </div>
             ))}
           </div>
-        )}
-      </section>
-    </div>
+        </section>
+
+        <section className="home-section fresh-section">
+          <div className="section-header">
+            <h2 className="section-title">🧁 Fresh Out of the Oven</h2>
+            <button className="view-all" onClick={() => navigate("/shop")}>
+              View all
+            </button>
+          </div>
+
+          {loading ? (
+            <p className="loading-text">Yükleniyor... 🍰</p>
+          ) : newProducts.length === 0 ? (
+            <p className="empty-text">Yakında yeni ürünler geliyor! 🥧</p>
+          ) : (
+            <div className="products-row">
+              {newProducts.map((p) => (
+                <div
+                  key={p._id}
+                  className="product-card"
+                  data-slug={p.slug}
+                  data-id={p._id}
+                  tabIndex={0}
+                  onClick={() => handleProductClick(p)}
+                >
+                  {p.isFree && <span className="badge-free">FREE</span>}
+                  {!p.isFree && <span className="badge-paid">NEW</span>}
+
+                  {p.bannerUrl
+                    ? <img src={p.bannerUrl} alt={p.name} className="card-banner" />
+                    : <div className="card-banner-placeholder" />
+                  }
+
+                  <div className="card-body">
+                    {p.thumbnailUrl && (
+                      <img src={p.thumbnailUrl} alt={p.name} className="card-thumb" />
+                    )}
+                    <div className="card-info">
+                      <h3>{p.name}</h3>
+                      <p className="card-cat">{p.category}</p>
+                      <p className="card-price">
+                        {p.isFree ? "🆓 Free" : `$${p.price}`}
+                      </p>
+                    </div>
+                  </div>
+
+                  <button
+                    className="card-cart-btn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleProductClick(p);
+                    }}
+                  >
+                    🛒
+                  </button>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+      </div>
+    </>
   );
 };
 

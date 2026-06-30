@@ -14,7 +14,7 @@
   border-radius: var(--radius-lg, 20px);
   overflow: hidden;
   margin-bottom: 32px;
-  background: var(--bg-primary, #FFF8F4);
+  background: var(--bg-primary, #ffc9e7);
   box-shadow: var(--shadow-sm, 0 2px 8px rgba(74,36,25,0.08));
   border: 1px solid var(--border-light, #F3C8BE);
 }
@@ -24,7 +24,7 @@
   height: 160px;
   object-fit: cover;
   display: block;
-  opacity: 0.85;
+  opacity: 0.20;
 }
 
 .banner-text {

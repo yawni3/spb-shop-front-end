@@ -42,4 +42,15 @@ a{
 main {
   width: 100%;
 }
+.keyboard-selected {
+  outline: 3px solid var(--bg-nav-active, #ff90b3) !important;
+  outline-offset: 4px !important;
+  border-radius: var(--radius-md, 12px) !important;
+  box-shadow: 0 0 0 6px rgba(255, 144, 179, 0.2) !important;
+  transform: scale(1.02) !important;
+  transition: all 0.15s ease !important;
+}
 
+.product-card:focus {
+  outline: none;
+}
