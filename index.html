@@ -38,35 +38,21 @@
     <!-- ⭐ Manifest - PWA & Push Notification -->
     <link rel="manifest" href="/manifest.json" />
     <!-- ⭐ OneSignal Push Notification -->
-      <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-        <script>
-          // ⭐ Sayfa yüklendikten sonra başlat
-          document.addEventListener('DOMContentLoaded', function() {
-            const isProduction = window.location.hostname !== 'localhost' && 
-                                window.location.hostname !== '127.0.0.1';
-            
-            if (isProduction) {
-              window.OneSignalDeferred = window.OneSignalDeferred || [];
-              OneSignalDeferred.push(async function(OneSignal) {
-                try {
-                  await OneSignal.init({
-                    appId: "992c0eab-2f8d-494d-ae06-f62c8d2066b6",
-                    safari_web_id: "web.onesignal.auto.0dd8fdab-49d8-437b-ac06-36c9d15991be",
-                    notifyButton: {
-                      enable: true,
-                    },
-                    allowLocalhostAsSecureOrigin: true,
-                  });
-                  console.log('✅ OneSignal initialized successfully!');
-                } catch (error) {
-                  console.error('❌ OneSignal init error:', error);
-                }
-              });
-            } else {
-              console.log('ℹ️ OneSignal: Localhost detected, skipping init.');
-            }
-          });
-        </script>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "992c0eab-2f8d-494d-ae06-f62c8d2066b6",
+      safari_web_id: "web.onesignal.auto.0dd8fdab-49d8-437b-ac06-36c9d15991be",
+      notifyButton: {
+        enable: true,
+      },
+      allowLocalhostAsSecureOrigin: true,
+      // ⭐ ServiceWorker path'ini belirtme (OneSignal otomatik halleder)
+    });
+  });
+</script>
 
   
   </head>
