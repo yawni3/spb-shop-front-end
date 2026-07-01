@@ -53,6 +53,17 @@
   line-height: 1.7;
   font-family: 'Nunito', sans-serif;
 }
+.terms-email {
+  color: var(--pink, #FF73B3);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.terms-email:hover {
+  color: var(--text-heading, #4A2419);
+  text-decoration: underline;
+}
 
 /* Responsive */
 @media (max-width: 768px) {

@@ -30,7 +30,10 @@ const Terms = () => {
 
         <div className="terms-section">
           <h2>5. İletişim</h2>
-          <p>Sorularınız için: sleepypiebakery.contact@gmail.com</p>
+          <p>Sorularınız için:             
+            <a href="mailto:sleepypiebakery.contact@gmail.com" className="terms-email">
+              sleepypiebakery.contact@gmail.com
+            </a></p>
         </div>
       </div>
     </div>

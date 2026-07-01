@@ -26,8 +26,21 @@ const ProductDetail = () => {
     setError(null);
     
     try {
-      const response = await axios.get(`${API_URL}/products`);
-      const products = response.data;
+      // ⭐ SessionStorage'dan cache kontrolü
+      const cacheKey = 'spb_products';
+      const cached = sessionStorage.getItem(cacheKey);
+      let products;
+
+      if (cached) {
+        products = JSON.parse(cached);
+        console.log('📦 Cache\'den ürünler yüklendi');
+      } else {
+        const response = await axios.get(`${API_URL}/products`);
+        products = response.data;
+        sessionStorage.setItem(cacheKey, JSON.stringify(products));
+        console.log('📦 API\'den ürünler yüklendi (cache\'e kaydedildi)');
+      }
+      
       const foundProduct = products.find(p => p.slug === slug);
       
       if (!foundProduct) {
@@ -123,7 +136,7 @@ const ProductDetail = () => {
 
   const formattedPrice = isFree ? 'Ücretsiz' : `${price?.toFixed(2) || 0}₺`;
   const displayImages = previewImages.length > 0 ? previewImages : (bannerUrl ? [bannerUrl] : []);
-  const mainImage = displayImages[0] || thumbnailUrl || 'https://via.placeholder.com/600x400/FFF8F4/D89A8B?text=No+Image';
+  const mainImage = bannerUrl || displayImages[0] || thumbnailUrl || 'https://via.placeholder.com/600x400/FFF8F4/D89A8B?text=No+Image';
 
   return (
     <div className="product-details">
